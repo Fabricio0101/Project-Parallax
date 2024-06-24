@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -7,29 +8,57 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: "y",
+  prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: '2rem',
       screens: {
-        "2xl": "1400px",
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1600px',
       },
     },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1600px',
+    },
     extend: {
+      fontSize: {
+        'title': '4.5rem',
+        'subtitle': '2.5rem',
+        'description': '1.5rem',
+        'min': '1.3rem',
+        'light': '1rem',
+        'minlight': '0.8rem',
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+      },
+      backgroundImage: {
+        'home-pattern': "url('./src/assets/Background.png')"
+      },
       colors: {
         border: "hsl(var(--border))",
+        borderbutton: "#0061FE",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          100: '#ffffff',
+          200: '#C7C4E2',
+          300: '#4F4B69',
+          400: '#ED1C24',
+          500: '#939598',
+          600: '#1F1E29',
+          700: '#231F20',
+          800: '#049824'
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -71,6 +100,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      dropShadow: {
+        'sm': '-2px 3px 12px -4px rgba(0,0,0,0.75)',
+        'md': '-8px 5px 20px -4px rgba(0,0,0,0.75)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
